@@ -1,4 +1,4 @@
-# AWS Continues Integration
+# AWS Continuous Integration
 
 ## Description
 AWSCI is a Python module that enables you to spin up an instance on EC2 to run your tests on. This together with a Yaml interperter which gives you the possibility to add certain commands to the server. The builds are supported with Docker (Docker Hub will be supported soon).
@@ -29,13 +29,11 @@ after_success:
 ```
 
 #### Events:
-Name | Default | Description
-------------------
-`box` | `python` | The docker box, for more info on docker boxes: https://hub.docker.com/
-`aws_access` | none | Your AWS account info
-`install` | none | Installation scripts in list, will be run sequentely.
-`script` | none | The actually script to run, your tests, your whatsoever!
-`after_success` | none | Anything you want to do afterwards when successful? Add them there
+- `box`: The docker box, for more info on docker boxes: https://hub.docker.com/ (Default: `python`)
+- `aws_access`: Your AWS account info
+- `install`: Installation scripts in list, will be run sequentely.
+- `script`: The actually script to run, your tests, your whatsoever!
+- `after_success`: Anything you want to do afterwards when successful? Add them there
 
 Afterwards you can load the Yaml in our `CIInstance` class:
 ```python
